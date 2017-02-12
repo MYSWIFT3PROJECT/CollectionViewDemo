@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="930" y="-29"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="hiF-Gr-0aL">
             <objects>
-                <viewController id="hmK-FH-Rge" sceneMemberID="viewController">
+                <viewController id="hmK-FH-Rge" customClass="DetailViewController" customModule="CollectViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vko-xj-Zac"/>
                         <viewControllerLayoutGuide type="bottom" id="Aq0-DL-Koz"/>
@@ -118,10 +118,13 @@
                             <constraint firstItem="Aq0-DL-Koz" firstAttribute="top" secondItem="f7g-PE-rwb" secondAttribute="bottom" id="to2-J0-i1f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageViewDetail" destination="f7g-PE-rwb" id="3O4-ft-G2a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vu0-bf-cmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777.5" y="-28.75"/>
+            <point key="canvasLocation" x="2222" y="25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZE6-M2-TZr">

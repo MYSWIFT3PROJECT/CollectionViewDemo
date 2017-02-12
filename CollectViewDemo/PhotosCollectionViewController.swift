@@ -56,5 +56,15 @@ class PhotosCollectionViewController: UICollectionViewController {
         headerView.category = category
         return headerView
     }
-    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = self.photoCategories[indexPath.section]
+        let image = UIImage(named: category.imageNames[indexPath.item])
+        self.performSegue(withIdentifier: Storyboard.showDetailSegue, sender: image)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.showDetailSegue{
+            let detailVC = segue.destination as! DetailViewController
+            detailVC.image = sender as! UIImage
+        }
+    }
 }
