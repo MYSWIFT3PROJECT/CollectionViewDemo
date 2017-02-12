@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bMJ-SV-xvv">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bMJ-SV-xvv">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,8 +13,8 @@
         <!--Photos-->
         <scene sceneID="Hx6-jG-wQT">
             <objects>
-                <collectionViewController id="pbh-gS-kPX" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="pG3-jz-qlr">
+                <collectionViewController id="pbh-gS-kPX" customClass="PhotosCollectionViewController" customModule="CollectViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="pG3-jz-qlr">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,7 +32,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="No2-0t-W2F">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f2" translatesAutoresizingMaskIntoConstraints="NO" id="No2-0t-W2F">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         </imageView>
                                     </subviews>
@@ -43,6 +43,9 @@
                                     <constraint firstItem="No2-0t-W2F" firstAttribute="top" secondItem="nhB-l0-pXM" secondAttribute="top" id="G9K-bg-kAe"/>
                                     <constraint firstItem="No2-0t-W2F" firstAttribute="leading" secondItem="nhB-l0-pXM" secondAttribute="leading" id="eFj-Qu-rfG"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="photoImageView" destination="No2-0t-W2F" id="6Sf-yc-wga"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="KJe-sh-Gd7" customClass="HeaderView" customModule="CollectViewDemo" customModuleProvider="target">
@@ -72,6 +75,10 @@
                                 <constraint firstItem="yPN-ew-vIh" firstAttribute="top" secondItem="KJe-sh-Gd7" secondAttribute="top" constant="12" id="nlk-Iq-rVx"/>
                                 <constraint firstAttribute="bottom" secondItem="yPN-ew-vIh" secondAttribute="bottom" constant="12" id="z1g-gq-mzt"/>
                             </constraints>
+                            <connections>
+                                <outlet property="categoryImageView" destination="EMV-61-FUC" id="7LX-3l-BSK"/>
+                                <outlet property="categoryLabel" destination="yPN-ew-vIh" id="mA3-FU-hm1"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="pbh-gS-kPX" id="hry-6d-LbG"/>
@@ -80,7 +87,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photos" id="KNt-Nu-NOi"/>
                     <connections>
-                        <segue destination="hmK-FH-Rge" kind="show" id="rYp-3G-828"/>
+                        <segue destination="hmK-FH-Rge" kind="show" identifier="ShowDetail" id="rYp-3G-828"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XS2-cB-HzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,7 +106,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f7g-PE-rwb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f2" translatesAutoresizingMaskIntoConstraints="NO" id="f7g-PE-rwb">
                                 <rect key="frame" x="0.0" y="-65" width="320" height="481"/>
                             </imageView>
                         </subviews>
@@ -136,4 +143,7 @@
             <point key="canvasLocation" x="146.40000000000001" y="-26.53673163418291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="f2" width="1080" height="1270"/>
+    </resources>
 </document>
